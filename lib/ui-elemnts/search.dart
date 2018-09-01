@@ -11,7 +11,7 @@ class SearchWidget extends StatelessWidget {
           children: <Widget>[
             Icon(
               Icons.menu,
-              color: Colors.black,
+              color: Colors.black54,
             ),
             SizedBox(
               width: 10.0,
@@ -23,8 +23,8 @@ class SearchWidget extends StatelessWidget {
               ),
             ),
             Icon(
-              Icons.search,
-              color: Colors.red,
+              Icons.mic,
+              color: Colors.black54,
             ),
           ],
         ),

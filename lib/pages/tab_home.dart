@@ -16,10 +16,9 @@ List<Page> _allPages = <Page>[
 ];
 
 class HomeTab extends StatefulWidget {
-  HomeTab({this.scrollController, this.tabController});
+  HomeTab({this.scrollController});
 
   final ScrollController scrollController;
-  final TabController tabController;
 
   @override
   _HomeTabState createState() => _HomeTabState();
@@ -29,35 +28,11 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
   TabController _controller;
 
   Key _key = new PageStorageKey({});
-  bool _innerListIsScrolled = false;
-
-  void _updateScrollPosition() {
-    if (!_innerListIsScrolled &&
-        widget.scrollController.position.extentAfter == 0.0) {
-      setState(() {
-        _innerListIsScrolled = true;
-      });
-    } else if (_innerListIsScrolled &&
-        widget.scrollController.position.extentAfter > 0.0) {
-      setState(() {
-        _innerListIsScrolled = false;
-        // Reset scroll positions of the TabBarView pages
-        _key = new PageStorageKey({});
-      });
-    }
-  }
 
   @override
   void initState() {
     _controller = new TabController(vsync: this, length: _allPages.length);
-    widget.scrollController.addListener(_updateScrollPosition);
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    widget.scrollController.removeListener(_updateScrollPosition);
-    super.dispose();
   }
 
   Widget build(BuildContext context) {
@@ -74,7 +49,7 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
             child: TabBarView(
               key: _key,
               controller: _controller,
-              physics: new NeverScrollableScrollPhysics(),
+              physics: NeverScrollableScrollPhysics(),
               children: tabChildernPages,
             ),
           ),

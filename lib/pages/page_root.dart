@@ -8,7 +8,6 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
-  TabController _tabController;
   ScrollController _scrollController = new ScrollController();
 
   Widget _header() => SliverAppBar(
@@ -29,10 +28,7 @@ class _RootPageState extends State<RootPage> {
     return TabBarView(
       physics: new NeverScrollableScrollPhysics(),
       children: [
-        HomeTab(
-          tabController: _tabController,
-          scrollController: _scrollController,
-        ),
+        HomeTab(scrollController: _scrollController),
         Icon(Icons.directions_transit),
         Icon(Icons.directions_bike),
       ],
