@@ -16,14 +16,14 @@ class CardTitleWidget extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-                fontSize: 12.0,
+                fontSize: 14.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.black54),
           ),
           Text(
             "MORE",
             style: TextStyle(
-                fontSize: 12.0,
+                fontSize: 14.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.green),
           ),

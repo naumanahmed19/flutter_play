@@ -9,19 +9,21 @@ class TabBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Colors.white,
-      elevation: 5.0,
+      elevation: 3.0,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(0.0))),
-      margin: EdgeInsets.only(bottom: 10.0),
+      margin: EdgeInsets.only(bottom: 5.0),
       child: TabBar(
         labelStyle: TextStyle(fontSize: 12.0),
         controller: _controller,
         isScrollable: true,
-        labelColor: Colors.black45,
+        indicatorColor: Colors.white,
+        labelColor: Colors.green,
+        unselectedLabelColor: Colors.grey,
         tabs: _allPages.map((Page page) {
           return Tab(
             text: page.text,
-            icon: new Icon(page.icon, size: 18.0, color: Colors.black45),
+            icon: new Icon(page.icon, size: 18.0),
           );
         }).toList(),
       ),
