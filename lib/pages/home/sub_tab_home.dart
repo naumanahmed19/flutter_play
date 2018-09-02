@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../ui-elemnts/item.dart';
+import '../../ui-elemnts/items.dart';
 import '../../ui-elemnts/card-header.dart';
+import '../../mock-data/products.dart';
 
 void main() => runApp(MaterialApp(
       home: HomeSubTab(),
@@ -17,7 +18,7 @@ class _HomeSubTabState extends State<HomeSubTab> {
     return ListView.builder(
       padding: EdgeInsets.all(5.0),
       physics: ClampingScrollPhysics(),
-      itemCount: 10,
+      itemCount: sections.length,
       itemBuilder: (context, index) {
         return Card(
           elevation: 3.0,
@@ -26,10 +27,10 @@ class _HomeSubTabState extends State<HomeSubTab> {
           child: Container(
             padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 10.0),
             child: Column(children: <Widget>[
-              CardTitleWidget('New + updated Games', 'YOUR-ROUTE-NAME'),
+              CardTitleWidget(sections[index].type, 'YOUR-ROUTE-NAME'),
               Padding(
                 padding: EdgeInsets.only(left: 15.0, top: 20.0),
-                child: ItemWidget('Anger Birds 2 Full Game', '20 MB'),
+                child: ProductsWidget(sections[index].products),
               ),
             ]),
           ),

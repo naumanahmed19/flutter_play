@@ -9,6 +9,8 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   ScrollController _scrollController = new ScrollController();
+  double offset = 0.0;
+  static const double kEffectHeight = 100.0;
 
   Widget _header() => SliverAppBar(
         title: Container(child: SearchWidget(), height: 900.0),
@@ -40,7 +42,7 @@ class _RootPageState extends State<RootPage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        body: new NestedScrollView(
+        body: NestedScrollView(
           controller: _scrollController,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[

@@ -5,6 +5,7 @@ class SearchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 3.0,
+      margin: EdgeInsets.only(top: 10.0),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(2.0))),
       child: Padding(

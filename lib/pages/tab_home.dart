@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import '../ui-elemnts/tab_bar.dart';
 import '../pages/home/sub_tab_home.dart';
@@ -28,11 +30,33 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
   TabController _controller;
 
   Key _key = new PageStorageKey({});
+  double _offset = 0.0;
+
+  void _updateScrollPosition() {
+    if (widget.scrollController.position.extentAfter == 0.0) {
+      setState(() {
+        _offset = 25.0;
+      });
+    } else if (widget.scrollController.position.extentAfter > 0.0) {
+      setState(() {
+        _offset = 0.0;
+        // Reset scroll positions of the TabBarView pages
+        _key = new PageStorageKey({});
+      });
+    }
+  }
 
   @override
   void initState() {
     _controller = new TabController(vsync: this, length: _allPages.length);
+    widget.scrollController.addListener(_updateScrollPosition);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    widget.scrollController.removeListener(_updateScrollPosition);
+    super.dispose();
   }
 
   Widget build(BuildContext context) {
@@ -42,6 +66,10 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        Container(
+          padding: EdgeInsets.only(top: _offset),
+          decoration: BoxDecoration(color: Colors.green),
+        ),
         TabBarWidget(_controller, _allPages),
         Expanded(
           child: Padding(
