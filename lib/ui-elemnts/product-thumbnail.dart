@@ -12,8 +12,8 @@ class ProductThumbnail extends StatelessWidget {
       child: FadeInImage(
         image: NetworkImage(thumbnailUrl),
         placeholder: AssetImage('assets/x.jpg'),
-        height: 80.0,
-        width: 80.0,
+        height: 90.0,
+        width: 90.0,
         fit: BoxFit.cover,
       ),
     );
