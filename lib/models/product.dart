@@ -1,3 +1,5 @@
+import 'rating.dart';
+
 class Product {
   Product({
     this.id,
@@ -5,20 +7,21 @@ class Product {
     this.title,
     this.size,
     this.thumbnailUrl,
-    this.rating,
-    this.starRating,
-    this.categories,
+    this.downloads,
+    this.category,
     this.description,
     this.attachments,
+    this.rating,
   });
   final String id;
   final String bannerUrl;
   final String title;
   final String size;
   final String thumbnailUrl;
-  final double rating;
-  final int starRating;
-  final List<String> categories;
+
+  final String downloads;
+  final String category;
   final String description;
   final List<String> attachments;
+  final List<Rating> rating;
 }

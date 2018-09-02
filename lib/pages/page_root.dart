@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../ui-elemnts/drawer.dart';
 import '../ui-elemnts/search.dart';
 import '../pages/tab_home.dart';
 
@@ -8,13 +9,14 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
-  ScrollController _scrollController = new ScrollController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final ScrollController _scrollController = new ScrollController();
   double offset = 0.0;
-  static const double kEffectHeight = 100.0;
 
   Widget _header() => SliverAppBar(
-        title: Container(child: SearchWidget(), height: 900.0),
+        title: Container(child: SearchWidget(_scaffoldKey), height: 900.0),
         elevation: 0.0,
+        automaticallyImplyLeading: false,
         bottom: TabBar(
           indicatorPadding: EdgeInsets.symmetric(horizontal: 10.0),
           labelStyle: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
@@ -42,6 +44,8 @@ class _RootPageState extends State<RootPage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        key: _scaffoldKey,
+        drawer: DrawerWidget(),
         body: NestedScrollView(
           controller: _scrollController,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SearchWidget extends StatelessWidget {
+  final GlobalKey<ScaffoldState> _scaffoldKey;
+  SearchWidget(this._scaffoldKey);
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -13,9 +16,14 @@ class SearchWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Icon(
-              Icons.menu,
-              color: Colors.black54,
+            GestureDetector(
+              child: Icon(
+                Icons.menu,
+                color: Colors.black54,
+              ),
+              onTap: () {
+                _scaffoldKey.currentState.openDrawer();
+              },
             ),
             SizedBox(
               width: 10.0,

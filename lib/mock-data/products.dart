@@ -2,6 +2,8 @@ import '../models/product.dart';
 
 import '../models/sections.dart';
 
+import '../models/rating.dart';
+
 List<Sections> sections = <Sections>[
   Sections(
     type: 'New + Updated Games',
@@ -12,11 +14,10 @@ List<Sections> sections = <Sections>[
         bannerUrl: 'images/banner.png',
         title: 'Cut the Rope 2',
         size: '20 MB',
+        downloads: '23456',
         thumbnailUrl:
             'https://lh3.googleusercontent.com/01VEchHr1Ke6TnViZH3076ONh94LupPiIS3hZm0o-6oQ-k1LwEnYsOGFcJIK3_LSAQ=s360',
-        rating: 8.0,
-        starRating: 4,
-        categories: ['Animation', 'Comedy'],
+        category: 'Animation',
         description: 'For their fifth fully-animated feature-film '
             'collaboration, Illumination Entertainment and Universal '
             'Pictures present The Secret Life of Pets, a comedy about '
@@ -27,6 +28,15 @@ List<Sections> sections = <Sections>[
           'https://lh3.ggpht.com/SaQ9DR-L4tvavX7bta8xeyfBgkeMgJGykaGS0hsXQnb8TTbn0sHPUEmbT8NZ2JDqXss=w2880-h1446',
           'https://lh3.googleusercontent.com/3q9a2Bl4NsNtyE5F31daylw6I1JRLxd78z04L78qkGzr3TUjkL0w7tsiKoEZL4yB3a3o=w2880-h1446',
         ],
+        rating: [
+          Rating(
+            average: 4.4,
+            gameplay: 3.2,
+            graphics: 4.0,
+            controls: 3.4,
+            ratingUsers: '23455',
+          ),
+        ],
       ),
       Product(
         id: '1',
@@ -35,9 +45,7 @@ List<Sections> sections = <Sections>[
         size: '20 MB',
         thumbnailUrl:
             'https://lh3.googleusercontent.com/zUWf79lUz6VS95aFEl5T31OrYiETOb1ZbA1ahAuFbVcswfDy7p52TS2-lBweu7ghppI=s360',
-        rating: 8.0,
-        starRating: 4,
-        categories: ['Animation', 'Comedy'],
+        category: 'Racing',
         description: 'For their fifth fully-animated feature-film '
             'collaboration, Illumination Entertainment and Universal '
             'Pictures present The Secret Life of Pets, a comedy about '
@@ -48,6 +56,15 @@ List<Sections> sections = <Sections>[
           'https://lh3.googleusercontent.com/3YtOxN5jziQndIdiofmXImZ5fbUKLPtvM8zRT_ZYl4DOCXWpcsaO9qSAoKYiAs-MSg=w2880-h1446',
           'https://lh3.googleusercontent.com/y6BHks3z10sOOy9Hf55IcSb_QXeXyHu9drRqdGh5QZdpJ4I2pMSOBmxiIovNfamrx-c=w2880-h1446',
         ],
+        rating: [
+          Rating(
+            average: 4.5,
+            gameplay: 4.2,
+            graphics: 4.0,
+            controls: 3.4,
+            ratingUsers: '3435',
+          ),
+        ],
       ),
       // Product(
       //   id: 't-2-1',
@@ -56,8 +73,8 @@ List<Sections> sections = <Sections>[
       //   size: '20 MB',
       //   thumbnailUrl:
       //       'https://lh3.googleusercontent.com/mAiDdTOnOsc1F37yHMtOHN2fJ9s8Rk5j1WKamXfsYqJ1swG79f3G0-zF5GAzu69zbxw=s360',
-      //   rating: 8.0,
-      //   starRating: 4,
+      //
+      //
       //   categories: ['Animation', 'Comedy'],
       //   description: 'For their fifth fully-animated feature-film '
       //       'collaboration, Illumination Entertainment and Universal '
@@ -77,8 +94,8 @@ List<Sections> sections = <Sections>[
       //   size: '20 MB',
       //   thumbnailUrl:
       //       'https://lh3.googleusercontent.com/g75hrt7A-SyJyPRNh82p_mjEEkBqJw_Q4VZSLEiKmJG7n3YsEtTSCaY3HDluXCAV14Q=s360',
-      //   rating: 8.0,
-      //   starRating: 4,
+      //
+      //
       //   categories: ['Animation', 'Comedy'],
       //   description: 'For their fifth fully-animated feature-film '
       //       'collaboration, Illumination Entertainment and Universal '
@@ -98,8 +115,8 @@ List<Sections> sections = <Sections>[
       //   size: '20 MB',
       //   thumbnailUrl:
       //       'https://lh3.ggpht.com/PngI3eCj8wt9sz7zmbd3H8TC7AV4OxoZWeI9tvbn1IJlfh3nlmMnp55WTM51PodR9QZt=s360',
-      //   rating: 8.0,
-      //   starRating: 4,
+      //
+      //
       //   categories: ['Animation', 'Comedy'],
       //   description: 'For their fifth fully-animated feature-film '
       //       'collaboration, Illumination Entertainment and Universal '

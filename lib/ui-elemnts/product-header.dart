@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../ui-elemnts/product-stats.dart';
 import '../ui-elemnts/product-thumbnail.dart';
 import '../models/product.dart';
 
@@ -75,32 +76,7 @@ class ProductHeader extends StatelessWidget {
                         onPressed: () {},
                       ),
                       Divider(height: 20.0),
-                      Row(
-                        children: <Widget>[
-                          FlatButton(
-                            padding: EdgeInsets.all(10.0),
-                            onPressed: () {
-                              print("some Text");
-                            },
-                            child: Column(
-                              children: <Widget>[
-                                Icon(
-                                  Icons.offline_bolt,
-                                  size: 60.0,
-                                  color: Theme.of(context).primaryColor,
-                                ),
-                                SizedBox(height: 5.0),
-                                Text(
-                                  "Downloads",
-                                  style: TextStyle(
-                                    fontSize: 12.0,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                      ProductStats(product),
                       Divider(height: 20.0),
                       Text(
                         product.description,
