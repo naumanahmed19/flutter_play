@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import '../models/product.dart';
 import '../ui-elemnts/product-thumbnail.dart';
 
-class ProductWidget extends StatelessWidget {
+class CardProduct extends StatelessWidget {
   final Product product;
 
-  ProductWidget(this.product);
+  CardProduct(this.product);
 
   @override
   Widget build(BuildContext context) {

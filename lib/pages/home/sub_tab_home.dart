@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../ui-elemnts/items.dart';
-import '../../ui-elemnts/card-header.dart';
+import '../../ui-elemnts/card-section.dart';
+
 import '../../mock-data/products.dart';
 
 void main() => runApp(MaterialApp(
@@ -13,6 +13,29 @@ class HomeSubTab extends StatefulWidget {
 }
 
 class _HomeSubTabState extends State<HomeSubTab> {
+  _cardHeader(String title, String route) => Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text(
+              title,
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black54),
+            ),
+            Text(
+              "MORE",
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green),
+            ),
+          ],
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -27,10 +50,10 @@ class _HomeSubTabState extends State<HomeSubTab> {
           child: Container(
             padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 10.0),
             child: Column(children: <Widget>[
-              CardTitleWidget(sections[index].type, 'YOUR-ROUTE-NAME'),
+              _cardHeader(sections[index].type, 'YOUR-ROUTE-NAME'),
               Padding(
                 padding: EdgeInsets.only(left: 15.0, top: 20.0),
-                child: ProductsWidget(sections[index].products),
+                child: CardSection(sections[index].products),
               ),
             ]),
           ),

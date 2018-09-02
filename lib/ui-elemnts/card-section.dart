@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../ui-elemnts/product.dart';
+import '../ui-elemnts/card-product.dart';
 import '../models/product.dart';
 
-class ProductsWidget extends StatelessWidget {
-  ProductsWidget(this.products);
+class CardSection extends StatelessWidget {
+  CardSection(this.products);
   final List<Product> products;
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class ProductsWidget extends StatelessWidget {
         itemCount: products.length,
         itemExtent: 110.0,
         itemBuilder: (BuildContext context, int index) {
-          return ProductWidget(products[index]);
+          return CardProduct(products[index]);
         },
       ),
     );
