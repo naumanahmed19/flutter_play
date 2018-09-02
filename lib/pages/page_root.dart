@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import '../ui-elemnts/drawer.dart';
 import '../ui-elemnts/search.dart';
 import '../pages/tab_home.dart';
+import '../pages/tab_games.dart';
 
 class RootPage extends StatefulWidget {
   @override
@@ -33,8 +35,7 @@ class _RootPageState extends State<RootPage> {
       physics: new NeverScrollableScrollPhysics(),
       children: [
         HomeTab(scrollController: _scrollController),
-        Icon(Icons.directions_transit),
-        Icon(Icons.directions_bike),
+        GameTab(scrollController: _scrollController),
       ],
     );
   }
