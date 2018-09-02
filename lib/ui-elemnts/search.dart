@@ -16,14 +16,27 @@ class SearchWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            GestureDetector(
-              child: Icon(
-                Icons.menu,
-                color: Colors.black54,
+            Stack(
+              alignment: Alignment(
+                2.4,
+                -1.4,
               ),
-              onTap: () {
-                _scaffoldKey.currentState.openDrawer();
-              },
+              children: <Widget>[
+                Icon(
+                  Icons.brightness_1,
+                  color: Colors.red,
+                  size: 14.0,
+                ),
+                GestureDetector(
+                  child: Icon(
+                    Icons.menu,
+                    color: Colors.black54,
+                  ),
+                  onTap: () {
+                    _scaffoldKey.currentState.openDrawer();
+                  },
+                ),
+              ],
             ),
             SizedBox(
               width: 10.0,

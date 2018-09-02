@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../ui-elemnts/product-header.dart';
-import '../ui-elemnts/item-cover.dart';
+import '../ui-elemnts/product-cover.dart';
 import '../mock-data/products.dart';
 import '../models/product.dart';
 
@@ -22,86 +22,6 @@ class _DetailsPageState extends State<DetailsPage> {
     super.initState();
   }
 
-  // Widget _list() {
-  //   return SliverList(
-  //     delegate: new SliverChildListDelegate(<Widget>[
-  //       ItemHeader(),
-  //       new _ContactCategory(
-  //         icon: Icons.call,
-  //         children: <Widget>[
-  //           _ContactItem(
-  //             icon: Icons.message,
-  //             tooltip: 'Send message',
-  //             onPressed: () {
-  //               _scaffoldKey.currentState.showSnackBar(const SnackBar(
-  //                   content: const Text(
-  //                       'Pretend that this opened your SMS application.')));
-  //             },
-  //             lines: <String>[
-  //               'Mobile',
-  //             ],
-  //           ),
-  //           _ContactItem(
-  //             icon: Icons.message,
-  //             tooltip: 'Send message',
-  //             onPressed: () {
-  //               _scaffoldKey.currentState.showSnackBar(const SnackBar(
-  //                   content: const Text('A messaging app appears.')));
-  //             },
-  //             lines: <String>[
-  //               'Phone',
-  //             ],
-  //           ),
-  //         ],
-  //       ),
-  //       new _ContactCategory(
-  //         icon: Icons.contact_mail,
-  //         children: <Widget>[
-  //           new _ContactItem(
-  //             icon: Icons.email,
-  //             tooltip: 'Send personal e-mail',
-  //             onPressed: () {
-  //               _scaffoldKey.currentState.showSnackBar(const SnackBar(
-  //                   content: const Text(
-  //                       'Here, your e-mail application would open.')));
-  //             },
-  //             lines: <String>[
-  //               'Personal',
-  //             ],
-  //           ),
-  //         ],
-  //       ),
-  //       new _ContactCategory(
-  //         icon: Icons.location_on,
-  //         children: <Widget>[
-  //           new _ContactItem(
-  //             icon: Icons.map,
-  //             tooltip: 'Open map',
-  //             onPressed: () {
-  //               _scaffoldKey.currentState.showSnackBar(const SnackBar(
-  //                   content:
-  //                       const Text('This would show a map of San Francisco.')));
-  //             },
-  //             lines: <String>[
-  //               'Home',
-  //             ],
-  //           ),
-  //           new _ContactItem(
-  //             icon: Icons.map,
-  //             tooltip: 'Open map',
-  //             onPressed: () {
-  //               // Navigator.pushNamed(context, '/profile-step-location');
-  //             },
-  //             lines: <String>[
-  //               'City',
-  //             ],
-  //           ),
-  //         ],
-  //       ),
-  //     ]),
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     Product product = fetchProduct(widget.productIndex);
@@ -116,7 +36,7 @@ class _DetailsPageState extends State<DetailsPage> {
         key: _scaffoldKey,
         body: new CustomScrollView(
           slivers: <Widget>[
-            ItemCover(),
+            ProductCover(product.bannerUrl),
             // ItemHeader(),
             // _list(),
             SliverToBoxAdapter(

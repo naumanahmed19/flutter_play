@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 
 enum AppBarBehavior { normal, pinned, floating, snapping }
 
-class ItemCover extends StatelessWidget {
+class ProductCover extends StatelessWidget {
   final double _appBarHeight = 175.0;
+  final String url;
+
+  ProductCover(this.url);
 
   AppBarBehavior _appBarBehavior = AppBarBehavior.pinned;
   _cover() {
     return FadeInImage(
-      image: NetworkImage(
-          'https://lh3.googleusercontent.com/JmpHVlAbzDoOHyzzP7D731cAV0HEpfYJUIHQE76JUetuJl5au6pb-wZ3oitVXi5it8c=w2880-h1446'),
+      image: NetworkImage(url),
       placeholder: AssetImage('assets/x.jpg'),
       fit: BoxFit.cover,
       height: _appBarHeight,
