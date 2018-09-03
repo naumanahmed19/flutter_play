@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../details/product-descriptio-dialog.dart';
+import '../details/product-description-dialog.dart';
 
 class ProductDescription extends StatelessWidget {
   final String title;

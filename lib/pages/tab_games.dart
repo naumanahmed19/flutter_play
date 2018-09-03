@@ -32,34 +32,32 @@ class _GameTabState extends State<GameTab> with SingleTickerProviderStateMixin {
 
   Key _key = new PageStorageKey({});
   double _offset = 0.0;
+  double _newOffset = 0.0;
 
-  void _updateScrollPosition() {
+  void _scrollListener() {
     if (widget.scrollController.position.extentAfter == 0.0) {
-      setState(() {
-        _offset = 25.0;
-        if (Platform.isIOS) {
-          _offset = 35.0;
-        }
-      });
-    } else if (widget.scrollController.position.extentAfter > 0.0) {
-      setState(() {
-        _offset = 0.0;
-        // Reset scroll positions of the TabBarView pages
-        _key = new PageStorageKey({});
-      });
+      _newOffset = 25.0;
+      if (Platform.isIOS) {
+        _newOffset = 35.0;
+      }
+    } else {
+      _newOffset = 0.0;
     }
+    setState(() {
+      _offset = _newOffset;
+    });
   }
 
   @override
   void initState() {
     _controller = new TabController(vsync: this, length: _allPages.length);
-    widget.scrollController.addListener(_updateScrollPosition);
+    widget.scrollController.addListener(_scrollListener);
     super.initState();
   }
 
   @override
   void dispose() {
-    widget.scrollController.removeListener(_updateScrollPosition);
+    widget.scrollController.removeListener(_scrollListener);
     super.dispose();
   }
 

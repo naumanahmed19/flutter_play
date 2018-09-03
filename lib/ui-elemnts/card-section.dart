@@ -12,7 +12,7 @@ class CardSection extends StatelessWidget {
       child: new ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: products.length,
-        itemExtent: 110.0,
+        itemExtent: 100.0,
         itemBuilder: (BuildContext context, int index) {
           return CardProduct(products[index]);
         },
