@@ -30,22 +30,23 @@ class CardProduct extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Flexible(
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          product.title,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          style: TextStyle(fontSize: 12.0),
-                        ),
-                        SizedBox(height: 3.0),
-                        Text(
-                          product.size,
-                          style: TextStyle(fontSize: 12.0),
-                        )
-                      ],
-                    )),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            product.title,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            style: TextStyle(fontSize: 12.0),
+                          ),
+                          SizedBox(height: 3.0),
+                          Text(
+                            product.size,
+                            style: TextStyle(fontSize: 12.0),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),

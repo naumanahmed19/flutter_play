@@ -72,7 +72,7 @@ class ProductStats extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color color = Theme.of(context).primaryColor;
     return SizedBox.fromSize(
-      size: const Size.fromHeight(100.0),
+      size: const Size.fromHeight(90.0),
       child: ListView.builder(
         itemCount: 1,
         scrollDirection: Axis.horizontal,

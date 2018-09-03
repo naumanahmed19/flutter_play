@@ -19,7 +19,7 @@ class ProductCover extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       expandedHeight: _appBarHeight,
-      pinned: true,
+      pinned: false,
       floating: false,
       snap: false,
       actions: <Widget>[

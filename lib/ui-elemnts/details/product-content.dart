@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import '../details/product-stats.dart';
-import '..//product-thumbnail.dart';
+import '../details/product-attachments.dart';
+import '../details/product-description.dart';
+import '../product-thumbnail.dart';
 import '../../models/product.dart';
-import '../details/product-content.dart';
 
 class ProductContent extends StatelessWidget {
   final Product product;
@@ -76,13 +77,14 @@ class ProductContent extends StatelessWidget {
                       Divider(height: 20.0),
                       ProductStats(product),
                       Divider(height: 20.0),
-                      Text(
-                        product.description,
-                        style: TextStyle(color: Colors.grey[600]),
+                      ProductDescription(
+                        title: product.title,
+                        description: product.description,
                       ),
                     ],
                   ),
                 ),
+                ProductAttachments(product.attachments),
               ],
             ),
           ),
