@@ -22,8 +22,8 @@ class ProdutDescriptionDialogState extends State<ProdutDescriptionDialog> {
   Widget build(BuildContext context) {
     final Color _color = Colors.grey[800];
 
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
           title: Text(
             widget.title,
             style: TextStyle(color: _color),

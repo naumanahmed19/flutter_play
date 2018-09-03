@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../helpers/hero_photo_viewer.dart';
+
 import '../details/product-stats.dart';
 import '../details/product-attachments.dart';
 import '../details/product-description.dart';
@@ -8,6 +10,26 @@ import '../../models/product.dart';
 class ProductContent extends StatelessWidget {
   final Product product;
   ProductContent(this.product);
+
+  _thumbnailWithPhotoView(BuildContext context) => Container(
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HeroPhotoViewWrapper(
+                      heroTag: product.id,
+                      imageProvider: NetworkImage(product.thumbnailUrl),
+                    ),
+              ),
+            );
+          },
+          child: Container(
+            child: ProductThumbnail(product.thumbnailUrl, product.id),
+          ),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +40,7 @@ class ProductContent extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ListTile(
-                  leading: ProductThumbnail(product.thumbnailUrl, product.id),
+                  leading: _thumbnailWithPhotoView(context),
                   title: Text(
                     product.title,
                     style:
