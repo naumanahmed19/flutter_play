@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-enum AppBarBehavior { normal, pinned, floating, snapping }
-
 class ProductCover extends StatelessWidget {
   final double _appBarHeight = 175.0;
   final String url;
 
   ProductCover(this.url);
 
-  AppBarBehavior _appBarBehavior = AppBarBehavior.pinned;
   _cover() {
     return FadeInImage(
       image: NetworkImage(url),
@@ -22,33 +19,19 @@ class ProductCover extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       expandedHeight: _appBarHeight,
-      pinned: _appBarBehavior == AppBarBehavior.pinned,
-      floating: _appBarBehavior == AppBarBehavior.floating ||
-          _appBarBehavior == AppBarBehavior.snapping,
-      snap: _appBarBehavior == AppBarBehavior.snapping,
+      pinned: true,
+      floating: false,
+      snap: false,
       actions: <Widget>[
-        new IconButton(
+        IconButton(
           icon: const Icon(Icons.search),
           tooltip: 'Search Flutter Play',
           onPressed: () {},
         ),
-        new PopupMenuButton<AppBarBehavior>(
-          onSelected: (AppBarBehavior value) {},
-          itemBuilder: (BuildContext context) =>
-              <PopupMenuItem<AppBarBehavior>>[
-                const PopupMenuItem<AppBarBehavior>(
-                    value: AppBarBehavior.normal,
-                    child: const Text('App bar scrolls away')),
-                const PopupMenuItem<AppBarBehavior>(
-                    value: AppBarBehavior.pinned,
-                    child: const Text('App bar stays put')),
-                const PopupMenuItem<AppBarBehavior>(
-                    value: AppBarBehavior.floating,
-                    child: const Text('App bar floats')),
-                const PopupMenuItem<AppBarBehavior>(
-                    value: AppBarBehavior.snapping,
-                    child: const Text('App bar snaps')),
-              ],
+        IconButton(
+          icon: const Icon(Icons.more_vert),
+          tooltip: 'More Options',
+          onPressed: () {},
         ),
       ],
       flexibleSpace: new FlexibleSpaceBar(

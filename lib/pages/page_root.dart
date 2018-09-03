@@ -16,7 +16,7 @@ class _RootPageState extends State<RootPage> {
   double offset = 0.0;
 
   Widget _header() => SliverAppBar(
-        title: Container(child: SearchWidget(_scaffoldKey), height: 900.0),
+        title: Container(child: SearchWidget(_scaffoldKey)),
         elevation: 0.0,
         automaticallyImplyLeading: false,
         bottom: TabBar(
