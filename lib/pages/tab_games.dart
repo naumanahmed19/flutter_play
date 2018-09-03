@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import '../ui-elemnts/tab_bar.dart';
@@ -36,6 +37,9 @@ class _GameTabState extends State<GameTab> with SingleTickerProviderStateMixin {
     if (widget.scrollController.position.extentAfter == 0.0) {
       setState(() {
         _offset = 25.0;
+        if (Platform.isIOS) {
+          _offset = 35.0;
+        }
       });
     } else if (widget.scrollController.position.extentAfter > 0.0) {
       setState(() {

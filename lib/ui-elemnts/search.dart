@@ -44,7 +44,7 @@ class SearchWidget extends StatelessWidget {
             Expanded(
               child: TextField(
                 decoration: InputDecoration(
-                    border: InputBorder.none, hintText: "Find our product"),
+                    border: InputBorder.none, hintText: "Search..."),
               ),
             ),
             Icon(
