@@ -19,7 +19,19 @@ class HeroPhotoViewWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: Icon(Icons.close),
+          onPressed: () => Navigator.pop(context),
+        ),
+        elevation: 0.0,
+        bottom: PreferredSize(
+          preferredSize: null,
+          child: Divider(
+            color: Colors.grey[400],
+            height: 1.0,
+          ),
+        ),
       ),
       body: Container(
         constraints: BoxConstraints.expand(
